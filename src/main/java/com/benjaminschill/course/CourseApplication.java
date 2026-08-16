@@ -1,4 +1,4 @@
-package com.Benjamin_Schill.course;
+package com.benjaminschill.course;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
