@@ -24,8 +24,7 @@ import com.benjaminschill.course.repositories.UserRepository;
 @Profile("test")
 public class TestConfig implements CommandLineRunner {
 
-	@Autowired
-	private UserRepository userRepository;
+	private final UserRepository userRepository;
 	
 	@Autowired
 	private OrderRepository orderRepository;
@@ -38,6 +37,10 @@ public class TestConfig implements CommandLineRunner {
 	
 	@Autowired
 	private OrderItemRepository orderItemRepository;
+
+	TestConfig(UserRepository userRepository) {
+		this.userRepository = userRepository;
+	}
 	
 	@Override
 	public void run(String... args) throws Exception {
@@ -82,5 +85,4 @@ public class TestConfig implements CommandLineRunner {
 		
 		orderItemRepository.saveAll(Arrays.asList(oi1, oi2, oi3, oi4));
 	}
-	
 }
